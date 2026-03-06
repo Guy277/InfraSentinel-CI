@@ -33,9 +33,10 @@ Logs → Analyse IA → Détection anomalies → Score de risque → Alertes →
 Python  
 FastAPI  
 Machine Learning  
-PostgreSQL  
+MySQL  
 Dashboard Web
 
 ## Impact
+
 
 InfraSentinel CI permet d'améliorer la cybersécurité des PME africaines et de renforcer la résilience des infrastructures critiques.
