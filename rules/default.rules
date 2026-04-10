@@ -1,0 +1,36 @@
+# Snort/Suricata rules sample
+# Add your rules here or use rules from https://snort.org/rules/
+
+# SQL Injection
+alert tcp any any -> any any (msg:"SQL Injection attempt"; content:"' OR '1'='1"; sid:1000001;)
+alert tcp any any -> any any (msg:"SQL Injection UNION"; content:"UNION SELECT"; sid:1000002;)
+alert tcp any any -> any any (msg:"SQL Injection 1=1"; content:"1=1"; sid:1000003;)
+
+# XSS
+alert tcp any any -> any any (msg:"XSS script tag"; content:"<script>"; sid:1000010;)
+alert tcp any any -> any any (msg:"XSS javascript"; content:"javascript:"; sid:1000011;)
+
+# Command Injection
+alert tcp any any -> any any (msg:"Command Injection ls"; content:"ls -la"; sid:1000020;)
+alert tcp any any -> any any (msg:"Command Injection wget"; content:"wget "; sid:1000021;)
+alert tcp any any -> any any (msg:"Command Injection curl"; content:"curl "; sid:1000022;)
+
+# Backdoors
+alert tcp any any -> any any (msg:"Backdoor nc"; content:"nc -l"; sid:1000030;)
+alert tcp any any -> any any (msg:"Backdoor python reverse"; content:"python -c"; sid:1000031;)
+
+# Port Scan
+alert tcp any any -> any any (msg:"Port scan SYN"; flags:S; sid:1000040;)
+
+# Worm
+alert tcp any any -> any any (msg:"Worm Mydoom"; content:"mydoom"; sid:1000050;)
+alert tcp any any -> any any (msg:"Worm Conficker"; content:"conficker"; sid:1000051;)
+
+# FTP
+alert tcp any any -> any any (msg:"FTP anonymous"; content:"anonymous"; sid:1000060;)
+
+# SSH
+alert tcp any any -> any any (msg:"SSH brute force"; content:"invalid user"; sid:1000070;)
+
+# LDAP
+alert tcp any any -> any any (msg:"LDAP injection"; content:"*)(uid=*))"; sid:1000080;)

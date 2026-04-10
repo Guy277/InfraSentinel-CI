@@ -1,0 +1,389 @@
+2026-04-09 03:54:45 [INFO] __main__: ============================================================
+2026-04-09 03:54:45 [INFO] __main__:   IDS/IPS Security Agent v1.0.0
+2026-04-09 03:54:45 [INFO] __main__: ============================================================
+2026-04-09 03:54:45 [INFO] database.db: Database tables created successfully (sqlite)
+2026-04-09 03:54:45 [INFO] __main__: Database initialized
+2026-04-09 03:54:45 [WARNING] capture.log_collector: No system log files found or accessible
+2026-04-09 03:54:45 [INFO] ai_engine.signature_detector: Loaded 14 signatures from C:\Users\user\Desktop\InfraSentinel-CI\systeme-de-protection-main\rules\default.rules
+2026-04-09 03:54:45 [INFO] ai_engine.signature_detector: Total signatures loaded: 14
+2026-04-09 03:54:45 [INFO] core.agent: SecurityAgent v1.0.0 - Initializing...
+2026-04-09 03:54:45 [INFO] ai_engine.anomaly_detector: Model loaded from disk
+2026-04-09 03:54:45 [INFO] core.agent: AI model loaded from disk
+2026-04-09 03:54:45 [INFO] ips.incident_logger: 192.168.110.1 already in whitelist
+2026-04-09 03:54:45 [INFO] ips.incident_logger: 192.168.108.1 already in whitelist
+2026-04-09 03:54:45 [INFO] ips.incident_logger: 172.17.80.1 already in whitelist
+2026-04-09 03:54:45 [INFO] ips.incident_logger: 192.168.80.1 already in whitelist
+2026-04-09 03:54:45 [INFO] ips.incident_logger: 172.29.192.1 already in whitelist
+2026-04-09 03:54:45 [INFO] ips.incident_logger: 10.10.10.207 already in whitelist
+2026-04-09 03:54:45 [INFO] core.agent: Whitelist setup complete (private IPs auto-whitelisted)
+2026-04-09 03:54:45 [INFO] core.agent: SecurityAgent initialized successfully
+2026-04-09 03:54:45 [INFO] core.agent: Auto-retraining disabled (set RETRAIN_ENABLED=true to enable)
+2026-04-09 03:54:45 [INFO] chatbot.security_chatbot: Chatbot cloud ready with gemini model: gemini-1.5-flash
+2026-04-09 03:54:45 [INFO] chatbot.security_chatbot: Chatbot enabled in hybrid mode (provider=gemini, local=True, cloud=True)
+2026-04-09 03:54:45 [INFO] core.agent: Chatbot enabled in hybrid mode (model=gemini-1.5-flash)
+2026-04-09 03:54:45 [INFO] core.hybrid_manager: Hybrid mode switched to connecte: Connectivite externe disponible via TCP 1.1.1.1:53
+2026-04-09 03:54:45 [INFO] core.agent: Hybrid connectivity update received: connecte
+2026-04-09 03:54:45 [INFO] capture.sniffer: Sniffer started on interface \Device\NPF_{2E3CF052-A882-40A8-8522-5C1E860D1320} (filter=none)
+2026-04-09 03:54:45 [INFO] ips.blocker: IP blocker started
+2026-04-09 03:54:45 [WARNING] capture.port_scanner: Cannot start scanner: nmap not available
+2026-04-09 03:54:45 [INFO] capture.log_collector: Log collector started, monitoring 0 files
+2026-04-09 03:54:45 [INFO] core.agent: SecurityAgent started - monitoring interface: \Device\NPF_{2E3CF052-A882-40A8-8522-5C1E860D1320}
+2026-04-09 03:54:45 [INFO] __main__: Dashboard: http://0.0.0.0:9090
+2026-04-09 03:54:45 [INFO] __main__: Credentials: admin / admin
+INFO:     127.0.0.1:29590 - "GET /api/hybrid/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63196 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49672 - "GET /api/incidents?limit=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4758 - "GET /api/blocked-ips HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58555 - "GET /api/traffic HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28109 - "GET /api/alerts?limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29590 - "GET /api/whitelist HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63196 - "GET /api/chatbot/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63196 - "GET /api/hybrid/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29590 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58555 - "GET /api/incidents?limit=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28109 - "GET /api/traffic HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4758 - "GET /api/blocked-ips HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49672 - "GET /api/alerts?limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63196 - "GET /api/whitelist HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29590 - "GET /api/chatbot/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29590 - "GET /api/hybrid/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63196 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49672 - "GET /api/incidents?limit=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4758 - "GET /api/blocked-ips HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58555 - "GET /api/alerts?limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29590 - "GET /api/whitelist HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63196 - "GET /api/chatbot/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28109 - "GET /api/traffic HTTP/1.1" 200 OK
+2026-04-09 03:54:55 [INFO] ips.incident_logger: Incident logged: id=179790 ip=192.168.1.14 level=faible
+2026-04-09 03:54:55 [INFO] core.agent: [INFO] IP=192.168.1.14 Score=0.2420 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:54:55 [INFO] ips.incident_logger: Incident logged: id=179791 ip=1.1.1.1 level=faible
+2026-04-09 03:54:55 [INFO] core.agent: [INFO] IP=1.1.1.1 Score=0.2436 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:54:55 [INFO] ips.incident_logger: Incident logged: id=179792 ip=192.168.1.1 level=faible
+2026-04-09 03:54:55 [INFO] core.agent: [INFO] IP=192.168.1.1 Score=0.2458 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:54:55 [INFO] ips.incident_logger: Incident logged: id=179793 ip=10.10.10.161 level=faible
+2026-04-09 03:54:55 [INFO] core.agent: [INFO] IP=10.10.10.161 Score=0.2425 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:54:55 [INFO] ips.incident_logger: Incident logged: id=179794 ip=10.10.10.124 level=faible
+2026-04-09 03:54:55 [INFO] core.agent: [INFO] IP=10.10.10.124 Score=0.2424 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:54:55 [INFO] ips.incident_logger: Incident logged: id=179795 ip=142.251.216.106 level=faible
+2026-04-09 03:54:55 [INFO] core.agent: [INFO] IP=142.251.216.106 Score=0.2446 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:54:55 [INFO] ips.incident_logger: Incident logged: id=179796 ip=216.58.223.234 level=faible
+2026-04-09 03:54:55 [INFO] core.agent: [INFO] IP=216.58.223.234 Score=0.2431 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:54:55 [INFO] ips.incident_logger: Incident logged: id=179797 ip=95.100.100.129 level=faible
+2026-04-09 03:54:55 [INFO] core.agent: [INFO] IP=95.100.100.129 Score=0.2441 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:54:55 [INFO] ips.incident_logger: Incident logged: id=179798 ip=172.64.155.209 level=faible
+2026-04-09 03:54:55 [INFO] core.agent: [INFO] IP=172.64.155.209 Score=0.2583 Type=anomaly Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:54:55 [INFO] ips.incident_logger: Incident logged: id=179799 ip=10.10.10.1 level=faible
+2026-04-09 03:54:55 [INFO] core.agent: [INFO] IP=10.10.10.1 Score=0.2424 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:54:55 [INFO] ips.incident_logger: Incident logged: id=179800 ip=66.203.125.11 level=faible
+2026-04-09 03:54:55 [INFO] core.agent: [INFO] IP=66.203.125.11 Score=0.2765 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:54:55 [INFO] ips.incident_logger: Incident logged: id=179801 ip=34.54.99.223 level=faible
+2026-04-09 03:54:55 [INFO] core.agent: [INFO] IP=34.54.99.223 Score=0.2360 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:54:55 [INFO] ips.incident_logger: Incident logged: id=179802 ip=216.58.223.202 level=faible
+2026-04-09 03:54:55 [INFO] core.agent: [INFO] IP=216.58.223.202 Score=0.2437 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:54:55 [INFO] ips.incident_logger: Incident logged: id=179803 ip=66.203.125.28 level=faible
+2026-04-09 03:54:55 [INFO] core.agent: [INFO] IP=66.203.125.28 Score=0.2785 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:54:55 [INFO] ips.incident_logger: Incident logged: id=179804 ip=172.64.148.235 level=moyen
+2026-04-09 03:54:55 [INFO] core.agent: [WARNING] IP=172.64.148.235 Score=0.3184 Type=brute_force Action=alerted Reason=Medium risk, alerting and monitoring
+2026-04-09 03:54:55 [WARNING] ips.alert_manager: ALERT: IP=172.64.148.235 Score=0.3184 Level=moyen Action=alerted
+2026-04-09 03:54:55 [INFO] ips.incident_logger: Incident logged: id=179805 ip=0.0.0.0 level=faible
+2026-04-09 03:54:55 [INFO] core.agent: [INFO] IP=0.0.0.0 Score=0.2466 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:54:55 [INFO] ips.incident_logger: Incident logged: id=179806 ip=172.64.41.3 level=moyen
+2026-04-09 03:54:55 [INFO] core.agent: [WARNING] IP=172.64.41.3 Score=0.3152 Type=anomaly Action=alerted Reason=Medium risk, alerting and monitoring
+2026-04-09 03:54:55 [WARNING] ips.alert_manager: ALERT: IP=172.64.41.3 Score=0.3152 Level=moyen Action=alerted
+2026-04-09 03:54:55 [INFO] ips.incident_logger: Incident logged: id=179807 ip=162.159.61.3 level=faible
+2026-04-09 03:54:55 [INFO] core.agent: [INFO] IP=162.159.61.3 Score=0.2416 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:54:55 [INFO] ips.incident_logger: Incident logged: id=179808 ip=66.203.125.15 level=faible
+2026-04-09 03:54:55 [INFO] core.agent: [INFO] IP=66.203.125.15 Score=0.2827 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+INFO:     127.0.0.1:63196 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28109 - "GET /api/hybrid/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29590 - "GET /api/incidents?limit=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58555 - "GET /api/blocked-ips HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49672 - "GET /api/alerts?limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4758 - "GET /api/traffic HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63196 - "GET /api/whitelist HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58555 - "GET /api/chatbot/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4758 - "GET /api/incidents?limit=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63196 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58555 - "GET /api/hybrid/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28109 - "GET /api/alerts?limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49672 - "GET /api/blocked-ips HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29590 - "GET /api/traffic HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4758 - "GET /api/whitelist HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4758 - "GET /api/chatbot/status HTTP/1.1" 200 OK
+2026-04-09 03:55:05 [INFO] ips.incident_logger: Incident logged: id=179809 ip=192.168.1.14 level=faible
+2026-04-09 03:55:05 [INFO] core.agent: [INFO] IP=192.168.1.14 Score=0.2424 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:05 [INFO] ips.incident_logger: Incident logged: id=179810 ip=1.1.1.1 level=faible
+2026-04-09 03:55:05 [INFO] core.agent: [INFO] IP=1.1.1.1 Score=0.2436 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:05 [INFO] ips.incident_logger: Incident logged: id=179811 ip=192.168.1.1 level=faible
+2026-04-09 03:55:05 [INFO] core.agent: [INFO] IP=192.168.1.1 Score=0.2434 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:05 [INFO] ips.incident_logger: Incident logged: id=179812 ip=10.10.10.161 level=faible
+2026-04-09 03:55:05 [INFO] core.agent: [INFO] IP=10.10.10.161 Score=0.2426 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:05 [INFO] ips.incident_logger: Incident logged: id=179813 ip=10.10.10.124 level=faible
+2026-04-09 03:55:05 [INFO] core.agent: [INFO] IP=10.10.10.124 Score=0.2431 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:05 [INFO] ips.incident_logger: Incident logged: id=179814 ip=142.251.216.106 level=faible
+2026-04-09 03:55:05 [INFO] core.agent: [INFO] IP=142.251.216.106 Score=0.2446 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:06 [INFO] ips.incident_logger: Incident logged: id=179815 ip=216.58.223.234 level=faible
+2026-04-09 03:55:06 [INFO] core.agent: [INFO] IP=216.58.223.234 Score=0.2436 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:06 [INFO] ips.incident_logger: Incident logged: id=179816 ip=95.100.100.129 level=faible
+2026-04-09 03:55:06 [INFO] core.agent: [INFO] IP=95.100.100.129 Score=0.2428 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:06 [INFO] ips.incident_logger: Incident logged: id=179817 ip=172.64.155.209 level=faible
+2026-04-09 03:55:06 [INFO] core.agent: [INFO] IP=172.64.155.209 Score=0.2962 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:06 [INFO] ips.incident_logger: Incident logged: id=179818 ip=10.10.10.1 level=faible
+2026-04-09 03:55:06 [INFO] core.agent: [INFO] IP=10.10.10.1 Score=0.2432 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:06 [INFO] ips.incident_logger: Incident logged: id=179819 ip=66.203.125.11 level=faible
+2026-04-09 03:55:06 [INFO] core.agent: [INFO] IP=66.203.125.11 Score=0.2765 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:06 [INFO] ips.incident_logger: Incident logged: id=179820 ip=34.54.99.223 level=faible
+2026-04-09 03:55:06 [INFO] core.agent: [INFO] IP=34.54.99.223 Score=0.2360 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:06 [INFO] ips.incident_logger: Incident logged: id=179821 ip=216.58.223.202 level=faible
+2026-04-09 03:55:06 [INFO] core.agent: [INFO] IP=216.58.223.202 Score=0.2437 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:06 [INFO] ips.incident_logger: Incident logged: id=179822 ip=66.203.125.28 level=faible
+2026-04-09 03:55:06 [INFO] core.agent: [INFO] IP=66.203.125.28 Score=0.2785 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:06 [INFO] ips.incident_logger: Incident logged: id=179823 ip=172.64.148.235 level=moyen
+2026-04-09 03:55:06 [INFO] core.agent: [WARNING] IP=172.64.148.235 Score=0.3184 Type=brute_force Action=alerted Reason=Medium risk, alerting and monitoring
+2026-04-09 03:55:06 [WARNING] ips.alert_manager: ALERT: IP=172.64.148.235 Score=0.3184 Level=moyen Action=alerted
+2026-04-09 03:55:06 [INFO] ips.incident_logger: Incident logged: id=179824 ip=0.0.0.0 level=faible
+2026-04-09 03:55:06 [INFO] core.agent: [INFO] IP=0.0.0.0 Score=0.2466 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:06 [INFO] ips.incident_logger: Incident logged: id=179825 ip=172.64.41.3 level=faible
+2026-04-09 03:55:06 [INFO] core.agent: [INFO] IP=172.64.41.3 Score=0.2768 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:06 [INFO] ips.incident_logger: Incident logged: id=179826 ip=162.159.61.3 level=faible
+2026-04-09 03:55:06 [INFO] core.agent: [INFO] IP=162.159.61.3 Score=0.2770 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:06 [INFO] ips.incident_logger: Incident logged: id=179827 ip=66.203.125.15 level=faible
+2026-04-09 03:55:06 [INFO] core.agent: [INFO] IP=66.203.125.15 Score=0.2827 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:06 [INFO] ips.incident_logger: Incident logged: id=179828 ip=52.123.144.55 level=faible
+2026-04-09 03:55:06 [INFO] core.agent: [INFO] IP=52.123.144.55 Score=0.2448 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:06 [INFO] ips.incident_logger: Incident logged: id=179829 ip=142.251.151.119 level=faible
+2026-04-09 03:55:06 [INFO] core.agent: [INFO] IP=142.251.151.119 Score=0.2449 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:06 [INFO] ips.incident_logger: Incident logged: id=179830 ip=184.25.239.19 level=faible
+2026-04-09 03:55:06 [INFO] core.agent: [INFO] IP=184.25.239.19 Score=0.2772 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:06 [INFO] ips.incident_logger: Incident logged: id=179831 ip=57.144.39.32 level=faible
+2026-04-09 03:55:06 [INFO] core.agent: [INFO] IP=57.144.39.32 Score=0.2828 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:06 [INFO] ips.incident_logger: Incident logged: id=179832 ip=104.18.32.47 level=faible
+2026-04-09 03:55:06 [INFO] core.agent: [INFO] IP=104.18.32.47 Score=0.2404 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:06 [INFO] ips.incident_logger: Incident logged: id=179833 ip=10.10.11.218 level=faible
+2026-04-09 03:55:06 [INFO] core.agent: [INFO] IP=10.10.11.218 Score=0.2446 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:06 [INFO] ips.incident_logger: Incident logged: id=179834 ip=10.10.11.184 level=faible
+2026-04-09 03:55:06 [INFO] core.agent: [INFO] IP=10.10.11.184 Score=0.2426 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:06 [INFO] ips.incident_logger: Incident logged: id=179835 ip=172.217.76.188 level=faible
+2026-04-09 03:55:06 [INFO] core.agent: [INFO] IP=172.217.76.188 Score=0.2449 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+INFO:     127.0.0.1:4758 - "GET /api/hybrid/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29590 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:49672 - "GET /api/incidents?limit=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:28109 - "GET /api/blocked-ips HTTP/1.1" 200 OK
+INFO:     127.0.0.1:63196 - "GET /api/traffic HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58555 - "GET /api/alerts?limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:4758 - "GET /api/whitelist HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29590 - "GET /api/chatbot/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:51941 - "GET /api/chatbot/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29976 - "GET /api/hybrid/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7595 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42677 - "GET /api/incidents?limit=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58055 - "GET /api/blocked-ips HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3918 - "GET /api/traffic HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29976 - "GET /api/whitelist HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16836 - "GET /api/alerts?limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7595 - "GET /api/chatbot/status HTTP/1.1" 200 OK
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179836 ip=192.168.1.14 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=192.168.1.14 Score=0.2426 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179837 ip=1.1.1.1 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=1.1.1.1 Score=0.2392 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179838 ip=192.168.1.1 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=192.168.1.1 Score=0.2434 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179839 ip=10.10.10.161 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=10.10.10.161 Score=0.2418 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179840 ip=10.10.10.124 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=10.10.10.124 Score=0.2428 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179841 ip=142.251.216.106 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=142.251.216.106 Score=0.2444 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179842 ip=216.58.223.234 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=216.58.223.234 Score=0.2434 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179843 ip=95.100.100.129 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=95.100.100.129 Score=0.2432 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179844 ip=172.64.155.209 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=172.64.155.209 Score=0.2982 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179845 ip=10.10.10.1 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=10.10.10.1 Score=0.2441 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179846 ip=66.203.125.11 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=66.203.125.11 Score=0.2765 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179847 ip=34.54.99.223 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=34.54.99.223 Score=0.2480 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179848 ip=216.58.223.202 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=216.58.223.202 Score=0.2437 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179849 ip=66.203.125.28 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=66.203.125.28 Score=0.2785 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179850 ip=172.64.148.235 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=172.64.148.235 Score=0.2442 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179851 ip=0.0.0.0 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=0.0.0.0 Score=0.2466 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179852 ip=172.64.41.3 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=172.64.41.3 Score=0.2815 Type=anomaly Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179853 ip=162.159.61.3 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=162.159.61.3 Score=0.2770 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179854 ip=66.203.125.15 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=66.203.125.15 Score=0.2827 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179855 ip=52.123.144.55 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=52.123.144.55 Score=0.2440 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179856 ip=142.251.151.119 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=142.251.151.119 Score=0.2441 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179857 ip=184.25.239.19 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=184.25.239.19 Score=0.2401 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179858 ip=57.144.39.32 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=57.144.39.32 Score=0.2432 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179859 ip=104.18.32.47 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=104.18.32.47 Score=0.2373 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179860 ip=10.10.11.218 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=10.10.11.218 Score=0.2425 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179861 ip=10.10.11.184 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=10.10.11.184 Score=0.2426 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179862 ip=172.217.76.188 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=172.217.76.188 Score=0.2449 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179863 ip=10.10.11.18 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=10.10.11.18 Score=0.2426 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179864 ip=142.251.216.42 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=142.251.216.42 Score=0.2842 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179865 ip=216.239.36.223 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=216.239.36.223 Score=0.2832 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179866 ip=98.85.61.3 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=98.85.61.3 Score=0.2758 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179867 ip=142.251.216.98 level=moyen
+2026-04-09 03:55:16 [INFO] core.agent: [WARNING] IP=142.251.216.98 Score=0.3154 Type=brute_force Action=alerted Reason=Medium risk, alerting and monitoring
+2026-04-09 03:55:16 [WARNING] ips.alert_manager: ALERT: IP=142.251.216.98 Score=0.3154 Level=moyen Action=alerted
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179868 ip=135.225.243.52 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=135.225.243.52 Score=0.2448 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179869 ip=142.251.216.110 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=142.251.216.110 Score=0.2904 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179870 ip=34.49.39.67 level=faible
+2026-04-09 03:55:16 [INFO] core.agent: [INFO] IP=34.49.39.67 Score=0.2754 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:16 [INFO] ips.incident_logger: Incident logged: id=179871 ip=102.67.196.57 level=moyen
+2026-04-09 03:55:17 [INFO] core.agent: [WARNING] IP=102.67.196.57 Score=0.3658 Type=brute_force Action=alerted Reason=Medium risk, alerting and monitoring
+2026-04-09 03:55:17 [WARNING] ips.alert_manager: ALERT: IP=102.67.196.57 Score=0.3658 Level=moyen Action=alerted
+2026-04-09 03:55:17 [INFO] ips.incident_logger: Incident logged: id=179872 ip=102.67.196.200 level=moyen
+2026-04-09 03:55:17 [WARNING] ips.alert_manager: ALERT: IP=102.67.196.200 Score=0.3661 Level=moyen Action=alerted
+2026-04-09 03:55:17 [INFO] core.agent: [WARNING] IP=102.67.196.200 Score=0.3661 Type=brute_force Action=alerted Reason=Medium risk, alerting and monitoring
+2026-04-09 03:55:17 [INFO] ips.incident_logger: Incident logged: id=179873 ip=216.58.223.246 level=moyen
+2026-04-09 03:55:17 [INFO] core.agent: [WARNING] IP=216.58.223.246 Score=0.3174 Type=brute_force Action=alerted Reason=Medium risk, alerting and monitoring
+2026-04-09 03:55:17 [WARNING] ips.alert_manager: ALERT: IP=216.58.223.246 Score=0.3174 Level=moyen Action=alerted
+2026-04-09 03:55:17 [INFO] ips.incident_logger: Incident logged: id=179874 ip=74.178.130.41 level=faible
+2026-04-09 03:55:17 [INFO] core.agent: [INFO] IP=74.178.130.41 Score=0.2449 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:17 [INFO] ips.incident_logger: Incident logged: id=179875 ip=52.182.143.214 level=faible
+2026-04-09 03:55:17 [INFO] core.agent: [INFO] IP=52.182.143.214 Score=0.2449 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+INFO:     127.0.0.1:7595 - "GET /api/hybrid/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7595 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16836 - "GET /api/incidents?limit=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29976 - "GET /api/blocked-ips HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58055 - "GET /api/alerts?limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3918 - "GET /api/traffic HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42677 - "GET /api/whitelist HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7595 - "GET /api/chatbot/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3918 - "GET /api/incidents?limit=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7595 - "GET /api/hybrid/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42677 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58055 - "GET /api/blocked-ips HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29976 - "GET /api/traffic HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16836 - "GET /api/alerts?limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3918 - "GET /api/whitelist HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3918 - "GET /api/chatbot/status HTTP/1.1" 200 OK
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179876 ip=192.168.1.14 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=192.168.1.14 Score=0.2431 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179877 ip=1.1.1.1 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=1.1.1.1 Score=0.2392 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179878 ip=192.168.1.1 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=192.168.1.1 Score=0.2445 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179879 ip=10.10.10.161 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=10.10.10.161 Score=0.2499 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179880 ip=10.10.10.124 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=10.10.10.124 Score=0.2430 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179881 ip=142.251.216.106 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=142.251.216.106 Score=0.2444 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179882 ip=216.58.223.234 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=216.58.223.234 Score=0.2434 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179883 ip=95.100.100.129 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=95.100.100.129 Score=0.2432 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179884 ip=172.64.155.209 level=moyen
+2026-04-09 03:55:27 [INFO] core.agent: [WARNING] IP=172.64.155.209 Score=0.3007 Type=brute_force Action=alerted Reason=Medium risk, alerting and monitoring
+2026-04-09 03:55:27 [WARNING] ips.alert_manager: ALERT: IP=172.64.155.209 Score=0.3007 Level=moyen Action=alerted
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179885 ip=10.10.10.1 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=10.10.10.1 Score=0.2755 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179886 ip=66.203.125.11 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=66.203.125.11 Score=0.2765 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179887 ip=34.54.99.223 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=34.54.99.223 Score=0.2542 Type=anomaly Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179888 ip=216.58.223.202 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=216.58.223.202 Score=0.2437 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179889 ip=66.203.125.28 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=66.203.125.28 Score=0.2785 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179890 ip=172.64.148.235 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=172.64.148.235 Score=0.2442 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179891 ip=0.0.0.0 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=0.0.0.0 Score=0.2466 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179892 ip=172.64.41.3 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=172.64.41.3 Score=0.2809 Type=anomaly Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179893 ip=162.159.61.3 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=162.159.61.3 Score=0.2770 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179894 ip=66.203.125.15 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=66.203.125.15 Score=0.2438 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179895 ip=52.123.144.55 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=52.123.144.55 Score=0.2440 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179896 ip=142.251.151.119 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=142.251.151.119 Score=0.2441 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179897 ip=184.25.239.19 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=184.25.239.19 Score=0.2401 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179898 ip=57.144.39.32 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=57.144.39.32 Score=0.2432 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179899 ip=104.18.32.47 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=104.18.32.47 Score=0.2373 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179900 ip=10.10.11.218 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=10.10.11.218 Score=0.2425 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179901 ip=10.10.11.184 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=10.10.11.184 Score=0.2437 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179902 ip=172.217.76.188 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=172.217.76.188 Score=0.2449 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179903 ip=10.10.11.18 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=10.10.11.18 Score=0.2426 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179904 ip=142.251.216.42 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=142.251.216.42 Score=0.2842 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179905 ip=216.239.36.223 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=216.239.36.223 Score=0.2832 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179906 ip=98.85.61.3 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=98.85.61.3 Score=0.2758 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179907 ip=142.251.216.98 level=moyen
+2026-04-09 03:55:27 [INFO] core.agent: [WARNING] IP=142.251.216.98 Score=0.3154 Type=brute_force Action=alerted Reason=Medium risk, alerting and monitoring
+2026-04-09 03:55:27 [WARNING] ips.alert_manager: ALERT: IP=142.251.216.98 Score=0.3154 Level=moyen Action=alerted
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179908 ip=135.225.243.52 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=135.225.243.52 Score=0.2448 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179909 ip=142.251.216.110 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=142.251.216.110 Score=0.2963 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179910 ip=34.49.39.67 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=34.49.39.67 Score=0.2754 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179911 ip=102.67.196.57 level=moyen
+2026-04-09 03:55:27 [INFO] core.agent: [WARNING] IP=102.67.196.57 Score=0.3655 Type=brute_force Action=alerted Reason=Medium risk, alerting and monitoring
+2026-04-09 03:55:27 [WARNING] ips.alert_manager: ALERT: IP=102.67.196.57 Score=0.3655 Level=moyen Action=alerted
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179912 ip=102.67.196.200 level=moyen
+2026-04-09 03:55:27 [INFO] core.agent: [WARNING] IP=102.67.196.200 Score=0.3332 Type=brute_force Action=alerted Reason=Medium risk, alerting and monitoring
+2026-04-09 03:55:27 [WARNING] ips.alert_manager: ALERT: IP=102.67.196.200 Score=0.3332 Level=moyen Action=alerted
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179913 ip=216.58.223.246 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=216.58.223.246 Score=0.2973 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179914 ip=74.178.130.41 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=74.178.130.41 Score=0.2449 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179915 ip=52.182.143.214 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=52.182.143.214 Score=0.2433 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179916 ip=102.67.196.12 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=102.67.196.12 Score=0.2844 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179917 ip=142.251.216.97 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=142.251.216.97 Score=0.2854 Type=brute_force Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179918 ip=216.58.223.238 level=moyen
+2026-04-09 03:55:27 [INFO] core.agent: [WARNING] IP=216.58.223.238 Score=0.3160 Type=brute_force Action=alerted Reason=Medium risk, alerting and monitoring
+2026-04-09 03:55:27 [WARNING] ips.alert_manager: ALERT: IP=216.58.223.238 Score=0.316 Level=moyen Action=alerted
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179919 ip=9.141.2.187 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=9.141.2.187 Score=0.2448 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179920 ip=52.123.200.51 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=52.123.200.51 Score=0.2448 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+2026-04-09 03:55:27 [INFO] ips.incident_logger: Incident logged: id=179921 ip=52.123.135.27 level=faible
+2026-04-09 03:55:27 [INFO] core.agent: [INFO] IP=52.123.135.27 Score=0.2448 Type=unknown Action=monitored Reason=Low risk, passive monitoring
+INFO:     127.0.0.1:3918 - "GET /api/hybrid/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16836 - "GET /api/stats HTTP/1.1" 200 OK
+INFO:     127.0.0.1:29976 - "GET /api/incidents?limit=100 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:58055 - "GET /api/blocked-ips HTTP/1.1" 200 OK
+INFO:     127.0.0.1:42677 - "GET /api/traffic HTTP/1.1" 200 OK
+INFO:     127.0.0.1:7595 - "GET /api/alerts?limit=20 HTTP/1.1" 200 OK
+INFO:     127.0.0.1:16836 - "GET /api/chatbot/status HTTP/1.1" 200 OK
+INFO:     127.0.0.1:3918 - "GET /api/whitelist HTTP/1.1" 200 OK

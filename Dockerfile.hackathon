@@ -1,0 +1,31 @@
+FROM python:3.11-slim
+
+# Install system deps
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    libpcap0.8 libpcap-dev iptables iproute2 nmap \
+    && rm -rf /var/lib/apt/lists/*
+
+WORKDIR /app
+
+# Copy requirements first for better caching
+COPY requirements.txt .
+
+# Install Python deps
+RUN pip install --no-cache-dir -r requirements.txt
+
+# Copy app
+COPY . .
+
+# Create data directory
+RUN mkdir -p /app/data /app/logs /app/models
+
+EXPOSE 9090
+
+ENV DB_TYPE=sqlite
+ENV DB_SQLITE_PATH=/app/data/ids.db
+ENV DASHBOARD_PORT=9090
+ENV DASHBOARD_USER=admin
+ENV DASHBOARD_PASSWORD=admin
+ENV NETWORK_INTERFACE=wlan0
+
+CMD ["python", "main.py"]

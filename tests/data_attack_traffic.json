@@ -1,0 +1,1302 @@
+[
+  {
+    "ip_address": "10.201.21.250",
+    "packet_count": 946,
+    "total_bytes": 9242,
+    "unique_ports": 1,
+    "frequency": 12.7305,
+    "unique_dst_ips": 3,
+    "syn_count": 39,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.23.155.179",
+    "packet_count": 989,
+    "total_bytes": 21682,
+    "unique_ports": 2,
+    "frequency": 33.0299,
+    "unique_dst_ips": 8,
+    "syn_count": 43,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.201.21.250",
+    "packet_count": 991,
+    "total_bytes": 355063,
+    "unique_ports": 22,
+    "frequency": 5.3934,
+    "unique_dst_ips": 6,
+    "syn_count": 52,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.194.177.222",
+    "packet_count": 1025,
+    "total_bytes": 125983,
+    "unique_ports": 2,
+    "frequency": 40.619,
+    "unique_dst_ips": 2,
+    "syn_count": 29,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.170.100.20",
+    "packet_count": 1006,
+    "total_bytes": 55567,
+    "unique_ports": 90,
+    "frequency": 132.5961,
+    "unique_dst_ips": 6,
+    "syn_count": 51,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "port_scan"
+  },
+  {
+    "ip_address": "10.211.69.198",
+    "packet_count": 997,
+    "total_bytes": 872800,
+    "unique_ports": 21,
+    "frequency": 17.1853,
+    "unique_dst_ips": 4,
+    "syn_count": 45,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.193.141.169",
+    "packet_count": 1020,
+    "total_bytes": 73740,
+    "unique_ports": 191,
+    "frequency": 168.9265,
+    "unique_dst_ips": 7,
+    "syn_count": 49,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "port_scan"
+  },
+  {
+    "ip_address": "10.169.202.233",
+    "packet_count": 978,
+    "total_bytes": 79082,
+    "unique_ports": 2,
+    "frequency": 43.8078,
+    "unique_dst_ips": 4,
+    "syn_count": 45,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.60.40.80",
+    "packet_count": 969,
+    "total_bytes": 68243,
+    "unique_ports": 58,
+    "frequency": 194.8013,
+    "unique_dst_ips": 6,
+    "syn_count": 53,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "port_scan"
+  },
+  {
+    "ip_address": "10.36.56.242",
+    "packet_count": 5030,
+    "total_bytes": 37552,
+    "unique_ports": 27,
+    "frequency": 425.4074,
+    "unique_dst_ips": 3,
+    "syn_count": 48,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.201.21.250",
+    "packet_count": 980,
+    "total_bytes": 309313,
+    "unique_ports": 33,
+    "frequency": 14.8802,
+    "unique_dst_ips": 8,
+    "syn_count": 59,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.201.21.250",
+    "packet_count": 1032,
+    "total_bytes": 9343,
+    "unique_ports": 61,
+    "frequency": 71.4064,
+    "unique_dst_ips": 4,
+    "syn_count": 40,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "port_scan"
+  },
+  {
+    "ip_address": "10.194.177.222",
+    "packet_count": 1018,
+    "total_bytes": 1592595,
+    "unique_ports": 32,
+    "frequency": 9.5183,
+    "unique_dst_ips": 4,
+    "syn_count": 41,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.201.21.250",
+    "packet_count": 963,
+    "total_bytes": 393850,
+    "unique_ports": 10,
+    "frequency": 6.7536,
+    "unique_dst_ips": 4,
+    "syn_count": 43,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.170.100.20",
+    "packet_count": 1007,
+    "total_bytes": 430814,
+    "unique_ports": 29,
+    "frequency": 10.2527,
+    "unique_dst_ips": 4,
+    "syn_count": 56,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.60.40.80",
+    "packet_count": 982,
+    "total_bytes": 438051,
+    "unique_ports": 14,
+    "frequency": 5.7386,
+    "unique_dst_ips": 4,
+    "syn_count": 38,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.97.253.182",
+    "packet_count": 965,
+    "total_bytes": 17659,
+    "unique_ports": 3,
+    "frequency": 38.8245,
+    "unique_dst_ips": 7,
+    "syn_count": 61,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.245.216.131",
+    "packet_count": 4915,
+    "total_bytes": 98522,
+    "unique_ports": 8,
+    "frequency": 372.2971,
+    "unique_dst_ips": 5,
+    "syn_count": 46,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.60.231.108",
+    "packet_count": 1051,
+    "total_bytes": 402392,
+    "unique_ports": 3,
+    "frequency": 49.5699,
+    "unique_dst_ips": 9,
+    "syn_count": 61,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.130.36.186",
+    "packet_count": 991,
+    "total_bytes": 205145,
+    "unique_ports": 88,
+    "frequency": 101.0727,
+    "unique_dst_ips": 3,
+    "syn_count": 54,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "port_scan"
+  },
+  {
+    "ip_address": "10.201.21.250",
+    "packet_count": 5078,
+    "total_bytes": 9155,
+    "unique_ports": 12,
+    "frequency": 203.4227,
+    "unique_dst_ips": 7,
+    "syn_count": 58,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.193.141.169",
+    "packet_count": 989,
+    "total_bytes": 42601,
+    "unique_ports": 100,
+    "frequency": 178.1676,
+    "unique_dst_ips": 5,
+    "syn_count": 55,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "port_scan"
+  },
+  {
+    "ip_address": "10.130.36.186",
+    "packet_count": 5083,
+    "total_bytes": 80841,
+    "unique_ports": 45,
+    "frequency": 483.8616,
+    "unique_dst_ips": 4,
+    "syn_count": 58,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.60.231.108",
+    "packet_count": 5053,
+    "total_bytes": 30337,
+    "unique_ports": 39,
+    "frequency": 497.7341,
+    "unique_dst_ips": 7,
+    "syn_count": 49,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.181.130.152",
+    "packet_count": 4988,
+    "total_bytes": 9444,
+    "unique_ports": 17,
+    "frequency": 115.069,
+    "unique_dst_ips": 6,
+    "syn_count": 59,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.251.48.28",
+    "packet_count": 1029,
+    "total_bytes": 281886,
+    "unique_ports": 3,
+    "frequency": 22.7435,
+    "unique_dst_ips": 3,
+    "syn_count": 47,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.161.22.240",
+    "packet_count": 996,
+    "total_bytes": 194899,
+    "unique_ports": 1,
+    "frequency": 39.6558,
+    "unique_dst_ips": 3,
+    "syn_count": 59,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.130.36.186",
+    "packet_count": 5034,
+    "total_bytes": 375511,
+    "unique_ports": 41,
+    "frequency": 104.0902,
+    "unique_dst_ips": 6,
+    "syn_count": 48,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.211.69.198",
+    "packet_count": 1025,
+    "total_bytes": 19378,
+    "unique_ports": 143,
+    "frequency": 172.3079,
+    "unique_dst_ips": 1,
+    "syn_count": 45,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "port_scan"
+  },
+  {
+    "ip_address": "10.23.155.179",
+    "packet_count": 1007,
+    "total_bytes": 49385,
+    "unique_ports": 1,
+    "frequency": 34.4259,
+    "unique_dst_ips": 3,
+    "syn_count": 50,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.245.216.131",
+    "packet_count": 1025,
+    "total_bytes": 8644,
+    "unique_ports": 2,
+    "frequency": 19.7405,
+    "unique_dst_ips": 6,
+    "syn_count": 55,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.63.18.74",
+    "packet_count": 5022,
+    "total_bytes": 154695,
+    "unique_ports": 47,
+    "frequency": 437.7524,
+    "unique_dst_ips": 4,
+    "syn_count": 54,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.161.22.240",
+    "packet_count": 994,
+    "total_bytes": 32211,
+    "unique_ports": 1,
+    "frequency": 25.9626,
+    "unique_dst_ips": 3,
+    "syn_count": 50,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.193.141.169",
+    "packet_count": 964,
+    "total_bytes": 1412270,
+    "unique_ports": 16,
+    "frequency": 15.0018,
+    "unique_dst_ips": 4,
+    "syn_count": 56,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.211.69.198",
+    "packet_count": 1005,
+    "total_bytes": 255392,
+    "unique_ports": 48,
+    "frequency": 5.8795,
+    "unique_dst_ips": 3,
+    "syn_count": 51,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.181.130.152",
+    "packet_count": 1006,
+    "total_bytes": 107403,
+    "unique_ports": 2,
+    "frequency": 11.0262,
+    "unique_dst_ips": 3,
+    "syn_count": 66,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.181.130.152",
+    "packet_count": 1035,
+    "total_bytes": 778701,
+    "unique_ports": 15,
+    "frequency": 5.9653,
+    "unique_dst_ips": 3,
+    "syn_count": 50,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.60.40.80",
+    "packet_count": 985,
+    "total_bytes": 949796,
+    "unique_ports": 19,
+    "frequency": 15.2219,
+    "unique_dst_ips": 4,
+    "syn_count": 47,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.193.141.169",
+    "packet_count": 1008,
+    "total_bytes": 52921,
+    "unique_ports": 1,
+    "frequency": 28.8577,
+    "unique_dst_ips": 4,
+    "syn_count": 44,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.251.48.28",
+    "packet_count": 995,
+    "total_bytes": 51230,
+    "unique_ports": 14,
+    "frequency": 18.2772,
+    "unique_dst_ips": 3,
+    "syn_count": 51,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.36.56.242",
+    "packet_count": 1002,
+    "total_bytes": 44559,
+    "unique_ports": 56,
+    "frequency": 130.3239,
+    "unique_dst_ips": 5,
+    "syn_count": 53,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "port_scan"
+  },
+  {
+    "ip_address": "10.251.48.28",
+    "packet_count": 948,
+    "total_bytes": 595659,
+    "unique_ports": 29,
+    "frequency": 9.0043,
+    "unique_dst_ips": 1,
+    "syn_count": 56,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.161.22.240",
+    "packet_count": 984,
+    "total_bytes": 27026,
+    "unique_ports": 2,
+    "frequency": 32.4663,
+    "unique_dst_ips": 4,
+    "syn_count": 38,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.170.100.20",
+    "packet_count": 983,
+    "total_bytes": 625810,
+    "unique_ports": 30,
+    "frequency": 13.4624,
+    "unique_dst_ips": 8,
+    "syn_count": 58,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.97.253.182",
+    "packet_count": 991,
+    "total_bytes": 180387,
+    "unique_ports": 3,
+    "frequency": 14.6104,
+    "unique_dst_ips": 6,
+    "syn_count": 68,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.63.18.74",
+    "packet_count": 1029,
+    "total_bytes": 35309,
+    "unique_ports": 9,
+    "frequency": 7.1992,
+    "unique_dst_ips": 3,
+    "syn_count": 49,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.245.216.131",
+    "packet_count": 4930,
+    "total_bytes": 305957,
+    "unique_ports": 43,
+    "frequency": 118.8751,
+    "unique_dst_ips": 0,
+    "syn_count": 69,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.36.56.242",
+    "packet_count": 1016,
+    "total_bytes": 1548788,
+    "unique_ports": 19,
+    "frequency": 13.6623,
+    "unique_dst_ips": 7,
+    "syn_count": 51,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.130.36.186",
+    "packet_count": 4963,
+    "total_bytes": 45497,
+    "unique_ports": 11,
+    "frequency": 133.2639,
+    "unique_dst_ips": 7,
+    "syn_count": 42,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.97.253.182",
+    "packet_count": 992,
+    "total_bytes": 182243,
+    "unique_ports": 153,
+    "frequency": 84.8036,
+    "unique_dst_ips": 4,
+    "syn_count": 58,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "port_scan"
+  },
+  {
+    "ip_address": "10.63.230.239",
+    "packet_count": 964,
+    "total_bytes": 20114,
+    "unique_ports": 1,
+    "frequency": 41.4238,
+    "unique_dst_ips": 6,
+    "syn_count": 67,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.169.202.233",
+    "packet_count": 5063,
+    "total_bytes": 12775,
+    "unique_ports": 13,
+    "frequency": 216.3174,
+    "unique_dst_ips": 4,
+    "syn_count": 47,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.60.231.108",
+    "packet_count": 5089,
+    "total_bytes": 69327,
+    "unique_ports": 33,
+    "frequency": 152.2288,
+    "unique_dst_ips": 6,
+    "syn_count": 42,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.169.202.233",
+    "packet_count": 5010,
+    "total_bytes": 25471,
+    "unique_ports": 9,
+    "frequency": 400.9967,
+    "unique_dst_ips": 5,
+    "syn_count": 46,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.130.36.186",
+    "packet_count": 1019,
+    "total_bytes": 121711,
+    "unique_ports": 31,
+    "frequency": 17.6382,
+    "unique_dst_ips": 8,
+    "syn_count": 51,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.63.230.239",
+    "packet_count": 4985,
+    "total_bytes": 182648,
+    "unique_ports": 47,
+    "frequency": 267.6432,
+    "unique_dst_ips": 6,
+    "syn_count": 61,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.130.36.186",
+    "packet_count": 985,
+    "total_bytes": 178554,
+    "unique_ports": 3,
+    "frequency": 36.8438,
+    "unique_dst_ips": 4,
+    "syn_count": 61,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.36.56.242",
+    "packet_count": 1007,
+    "total_bytes": 83992,
+    "unique_ports": 60,
+    "frequency": 193.0055,
+    "unique_dst_ips": 4,
+    "syn_count": 51,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "port_scan"
+  },
+  {
+    "ip_address": "10.229.237.250",
+    "packet_count": 4850,
+    "total_bytes": 15745,
+    "unique_ports": 14,
+    "frequency": 347.6452,
+    "unique_dst_ips": 5,
+    "syn_count": 44,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.193.141.169",
+    "packet_count": 5050,
+    "total_bytes": 194176,
+    "unique_ports": 30,
+    "frequency": 473.7835,
+    "unique_dst_ips": 5,
+    "syn_count": 51,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.211.69.198",
+    "packet_count": 962,
+    "total_bytes": 26072,
+    "unique_ports": 180,
+    "frequency": 57.4225,
+    "unique_dst_ips": 2,
+    "syn_count": 45,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "port_scan"
+  },
+  {
+    "ip_address": "10.201.21.250",
+    "packet_count": 1030,
+    "total_bytes": 203214,
+    "unique_ports": 23,
+    "frequency": 5.8454,
+    "unique_dst_ips": 6,
+    "syn_count": 35,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.63.230.239",
+    "packet_count": 971,
+    "total_bytes": 917261,
+    "unique_ports": 33,
+    "frequency": 15.5385,
+    "unique_dst_ips": 2,
+    "syn_count": 54,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.63.18.74",
+    "packet_count": 5066,
+    "total_bytes": 25118,
+    "unique_ports": 39,
+    "frequency": 225.1751,
+    "unique_dst_ips": 4,
+    "syn_count": 40,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.181.130.152",
+    "packet_count": 1000,
+    "total_bytes": 206282,
+    "unique_ports": 39,
+    "frequency": 7.5447,
+    "unique_dst_ips": 5,
+    "syn_count": 40,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.161.22.240",
+    "packet_count": 4918,
+    "total_bytes": 63752,
+    "unique_ports": 10,
+    "frequency": 448.2882,
+    "unique_dst_ips": 4,
+    "syn_count": 67,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.188.6.141",
+    "packet_count": 4900,
+    "total_bytes": 12208,
+    "unique_ports": 41,
+    "frequency": 203.1135,
+    "unique_dst_ips": 2,
+    "syn_count": 41,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.161.22.240",
+    "packet_count": 1062,
+    "total_bytes": 30281,
+    "unique_ports": 1,
+    "frequency": 23.156,
+    "unique_dst_ips": 3,
+    "syn_count": 51,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.130.36.186",
+    "packet_count": 4988,
+    "total_bytes": 14467,
+    "unique_ports": 31,
+    "frequency": 350.2221,
+    "unique_dst_ips": 5,
+    "syn_count": 57,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.193.141.169",
+    "packet_count": 1026,
+    "total_bytes": 1510440,
+    "unique_ports": 31,
+    "frequency": 10.6228,
+    "unique_dst_ips": 6,
+    "syn_count": 48,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.201.21.250",
+    "packet_count": 1038,
+    "total_bytes": 351954,
+    "unique_ports": 23,
+    "frequency": 18.5494,
+    "unique_dst_ips": 7,
+    "syn_count": 52,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.181.130.152",
+    "packet_count": 977,
+    "total_bytes": 92446,
+    "unique_ports": 3,
+    "frequency": 28.8437,
+    "unique_dst_ips": 6,
+    "syn_count": 42,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.63.230.239",
+    "packet_count": 980,
+    "total_bytes": 317371,
+    "unique_ports": 14,
+    "frequency": 15.7996,
+    "unique_dst_ips": 3,
+    "syn_count": 49,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.211.69.198",
+    "packet_count": 5100,
+    "total_bytes": 293912,
+    "unique_ports": 37,
+    "frequency": 135.7876,
+    "unique_dst_ips": 7,
+    "syn_count": 62,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.194.177.222",
+    "packet_count": 1009,
+    "total_bytes": 1022948,
+    "unique_ports": 22,
+    "frequency": 18.8322,
+    "unique_dst_ips": 2,
+    "syn_count": 52,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.251.48.28",
+    "packet_count": 967,
+    "total_bytes": 134791,
+    "unique_ports": 1,
+    "frequency": 40.9583,
+    "unique_dst_ips": 3,
+    "syn_count": 49,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.251.48.28",
+    "packet_count": 4918,
+    "total_bytes": 64877,
+    "unique_ports": 43,
+    "frequency": 197.1371,
+    "unique_dst_ips": 4,
+    "syn_count": 49,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.169.202.233",
+    "packet_count": 5124,
+    "total_bytes": 2240,
+    "unique_ports": 46,
+    "frequency": 453.0255,
+    "unique_dst_ips": 10,
+    "syn_count": 53,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.169.202.233",
+    "packet_count": 948,
+    "total_bytes": 213100,
+    "unique_ports": 1,
+    "frequency": 32.025,
+    "unique_dst_ips": 6,
+    "syn_count": 45,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.63.18.74",
+    "packet_count": 1032,
+    "total_bytes": 73296,
+    "unique_ports": 149,
+    "frequency": 63.3676,
+    "unique_dst_ips": 8,
+    "syn_count": 49,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "port_scan"
+  },
+  {
+    "ip_address": "10.130.36.186",
+    "packet_count": 1054,
+    "total_bytes": 573249,
+    "unique_ports": 44,
+    "frequency": 19.9257,
+    "unique_dst_ips": 5,
+    "syn_count": 53,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.211.69.198",
+    "packet_count": 1033,
+    "total_bytes": 50726,
+    "unique_ports": 2,
+    "frequency": 12.2671,
+    "unique_dst_ips": 6,
+    "syn_count": 56,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.193.141.169",
+    "packet_count": 1026,
+    "total_bytes": 652701,
+    "unique_ports": 12,
+    "frequency": 14.9341,
+    "unique_dst_ips": 7,
+    "syn_count": 56,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.161.22.240",
+    "packet_count": 1003,
+    "total_bytes": 267199,
+    "unique_ports": 2,
+    "frequency": 44.777,
+    "unique_dst_ips": 8,
+    "syn_count": 58,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.194.177.222",
+    "packet_count": 976,
+    "total_bytes": 110735,
+    "unique_ports": 87,
+    "frequency": 146.9045,
+    "unique_dst_ips": 5,
+    "syn_count": 50,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "port_scan"
+  },
+  {
+    "ip_address": "10.169.202.233",
+    "packet_count": 4889,
+    "total_bytes": 42214,
+    "unique_ports": 35,
+    "frequency": 266.2675,
+    "unique_dst_ips": 4,
+    "syn_count": 42,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.63.18.74",
+    "packet_count": 4825,
+    "total_bytes": 381605,
+    "unique_ports": 16,
+    "frequency": 386.2091,
+    "unique_dst_ips": 4,
+    "syn_count": 49,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.194.177.222",
+    "packet_count": 5011,
+    "total_bytes": 98481,
+    "unique_ports": 47,
+    "frequency": 422.2509,
+    "unique_dst_ips": 6,
+    "syn_count": 40,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.170.100.20",
+    "packet_count": 5087,
+    "total_bytes": 301092,
+    "unique_ports": 14,
+    "frequency": 329.3486,
+    "unique_dst_ips": 2,
+    "syn_count": 49,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.194.177.222",
+    "packet_count": 991,
+    "total_bytes": 21254,
+    "unique_ports": 172,
+    "frequency": 90.5176,
+    "unique_dst_ips": 7,
+    "syn_count": 58,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "port_scan"
+  },
+  {
+    "ip_address": "10.229.237.250",
+    "packet_count": 1030,
+    "total_bytes": 362511,
+    "unique_ports": 2,
+    "frequency": 37.3256,
+    "unique_dst_ips": 1,
+    "syn_count": 61,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.201.21.250",
+    "packet_count": 1014,
+    "total_bytes": 20938,
+    "unique_ports": 2,
+    "frequency": 46.7679,
+    "unique_dst_ips": 4,
+    "syn_count": 44,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.181.130.152",
+    "packet_count": 996,
+    "total_bytes": 26768,
+    "unique_ports": 98,
+    "frequency": 178.0703,
+    "unique_dst_ips": 6,
+    "syn_count": 42,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "port_scan"
+  },
+  {
+    "ip_address": "10.63.18.74",
+    "packet_count": 976,
+    "total_bytes": 5243,
+    "unique_ports": 79,
+    "frequency": 116.6274,
+    "unique_dst_ips": 5,
+    "syn_count": 50,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "port_scan"
+  },
+  {
+    "ip_address": "10.63.18.74",
+    "packet_count": 977,
+    "total_bytes": 55942,
+    "unique_ports": 1,
+    "frequency": 18.3095,
+    "unique_dst_ips": 5,
+    "syn_count": 51,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "brute_force"
+  },
+  {
+    "ip_address": "10.36.56.242",
+    "packet_count": 5127,
+    "total_bytes": 8077,
+    "unique_ports": 22,
+    "frequency": 402.4473,
+    "unique_dst_ips": 3,
+    "syn_count": 48,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.161.22.240",
+    "packet_count": 997,
+    "total_bytes": 1371,
+    "unique_ports": 112,
+    "frequency": 101.3049,
+    "unique_dst_ips": 8,
+    "syn_count": 33,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "port_scan"
+  },
+  {
+    "ip_address": "10.245.216.131",
+    "packet_count": 944,
+    "total_bytes": 599115,
+    "unique_ports": 37,
+    "frequency": 9.3496,
+    "unique_dst_ips": 6,
+    "syn_count": 38,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  },
+  {
+    "ip_address": "10.23.155.179",
+    "packet_count": 5100,
+    "total_bytes": 26321,
+    "unique_ports": 15,
+    "frequency": 366.7069,
+    "unique_dst_ips": 2,
+    "syn_count": 43,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "dos_flood"
+  },
+  {
+    "ip_address": "10.63.18.74",
+    "packet_count": 1033,
+    "total_bytes": 764880,
+    "unique_ports": 15,
+    "frequency": 11.0547,
+    "unique_dst_ips": 6,
+    "syn_count": 50,
+    "protocols": [
+      "TCP"
+    ],
+    "attack_type": "data_exfil"
+  }
+]

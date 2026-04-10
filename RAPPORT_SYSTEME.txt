@@ -1,0 +1,462 @@
+# RAPPORT — Systeme de Protection IDS/IPS
+
+## 1. Vue d'ensemble
+
+Systeme de detection et prevention d'intrusions (IDS/IPS) base sur l'intelligence artificielle. Il capture le trafic reseau en temps reel, detecte les anomalies via un modele Isolation Forest (scikit-learn), et repond automatiquement en bloquant les IP critiques via iptables. Un dashboard web 3D avec globe terrestre permet la supervision en temps reel.
+
+| Metrique | Valeur |
+|----------|--------|
+| Lignes de code Python | ~3 500 |
+| Lignes JS/CSS/HTML | ~2 050 |
+| Endpoints API | 20 REST + 2 WebSocket |
+| Tables BDD | 5 (incidents, alerts, blocked_ips, false_positives, whitelist) |
+| Types d'attaques detectees | 5 |
+| Dependances Python | 16 |
+| Onglets dashboard | 8 |
+
+---
+
+## 2. Architecture
+
+### 2.1 Conception generale
+
+Le systeme est architecte en couches distinctes permettant une separation claire des responsabilites :
+
+1. **Couche Capture** : Collecte des donnees reseau et systeme
+2. **Couche IA** : Analyse des anomalies et evaluation des risques
+3. **Couche Reponse** : Actions automatiques et notifications
+4. **Couche Presentation** : Dashboard web temps reel
+
+Cette architecture modulaire permet :
+- De remplacer un composant sans affecter les autres
+- De tester chaque couche independamment
+- De faire evoluer les algorithmes IA sans modifier la capture
+- D'ajouter de nouvelles sources de donnees facilement
+
+### 2.2 Diagramme d'architecture
+
+```
+main.py (point d'entree)
+    |
+    v
+SecurityAgent (core/agent.py) — orchestrateur principal
+    |
+    ├── COUCHE 1 — CAPTURE
+    │   ├── NetworkSniffer (capture/sniffer.py)     → scapy, capture paquets wlan0
+    │   ├── TrafficAggregator                        → aggregation par IP
+    │   ├── PortScanner (capture/port_scanner.py)    → nmap, scan periodique
+    │   ├── LogCollector (capture/log_collector.py)  → surveillance syslog
+    │   └── GeoLocator (capture/geolocation.py)      → ip-api.com, geolocalisation
+    │
+    ├── COUCHE 2 — IA
+    │   ├── AnomalyDetector (ai_engine/anomaly_detector.py) → Isolation Forest
+    │   └── RiskScorer (ai_engine/risk_scorer.py)           → score composite
+    │       (50% IA + 30% comportement + 20% vulnerabilite)
+    │
+    ├── COUCHE 3 — REPONSE
+    │   ├── IPBlocker (ips/blocker.py)           → iptables, blocage auto
+    │   ├── AlertManager (ips/alert_manager.py)  → WebSocket + email
+    │   └── IncidentLogger (ips/incident_logger.py) → PostgreSQL CRUD
+    │
+    └── DASHBOARD (dashboard/)
+        ├── app.py          → FastAPI, 20 endpoints REST, 2 WebSocket
+        ├── index.html      → 8 onglets (Vue, Incidents, Bloques, FP, Whitelist, Trafic, Carte, Logs)
+        ├── dashboard.js    → Chart.js + Globe.gl (terre 3D)
+        └── style.css       → theme sombre, responsive
+```
+
+### 2.3 Flux de donnees
+
+```
+Paquet reseau → Sniffer → Agregateur → AnomalyDetector (Isolation Forest)
+                                        → RiskScorer (score composite)
+                                        → _classify_threat() (type d'attaque)
+                                        → _make_decision() (politique)
+                                        → _execute_decision()
+                                            ├── IPBlocker (iptables)
+                                            ├── IncidentLogger (BDD)
+                                            └── AlertManager (WS + email)
+                                            → Dashboard (temps reel)
+```
+
+---
+
+## 3. Fonctionnalites implementees
+
+### 3.1 Capture reseau
+
+#### NetworkSniffer (capture/sniffer.py)
+- Capture de paquets en temps reel via la bibliotheque **scapy** sur l'interface reseau (detection automatique de wlan0/eth0)
+- Extraction des informations pertinentes : adresse IP source/destination, ports, protocole, taille du paquet, flags TCP
+- Mode promiscuous pour capturer tout le trafic sur le reseau local
+
+#### TrafficAggregator
+- Regroupement des paquets par adresse IP source
+- Calcul de metriques pour chaque IP :
+  - Nombre total de paquets
+  - Volume total d'octets
+  - Nombre de ports uniques contactes
+  - Distribution des protocoles (TCP/UDP/ICMP)
+  - Nombre de paquets avec flag SYN
+  - Frequence d'emission (paquets/seconde)
+- Ces metriques constituent les caracteristiques d'entree pour le modele IA
+
+#### PortScanner (capture/port_scanner.py)
+- Scan periodique des ports via **nmap** pour decouvrir les services actifs
+- Configuration parametable : plage de ports, timeout, parallélisme
+- Decouverte des services et versions pour enrichir le contexte de securite
+
+#### LogCollector (capture/log_collector.py)
+- Surveillance des fichiers de log systeme (syslog, auth.log, secure)
+- Analyse par expressions regulieres pour detecter :
+  - Tentatives de connexion SSH echouees
+  - Acces refuses
+  - Signaux suspects (fail2ban, portsentry)
+- Correlation avec le trafic reseau pour confirmer les alertes
+
+#### GeoLocator (capture/geolocation.py)
+- Resolution de la localisation geographique des IPs via l'API **ip-api.com**
+- Cache memoire avec TTL de 1 heure pour eviter les requetes redondantes
+- Mapping de 240+ pays vers 6 continents pour les statistiques
+
+### 3.2 Intelligence artificielle
+
+#### AnomalyDetector (ai_engine/anomaly_detector.py)
+
+**Modele utilise : Isolation Forest**
+
+L'Isolation Forest est un algorithme de detection d'anomalies non supervise ideal pour :
+- La detection de comportements rares sans avoir besoin d'exemples d'attaques
+- L'efficacite avec des donnees haute dimension
+- La rapidite d'execution en temps reel
+
+**Caracteristiques extraites (8 features)** :
+1. `packet_count` - nombre de paquets emis
+2. `byte_count` - volume total en octets
+3. `port_diversity` - nombre de ports uniques
+4. `protocol_diversity` - nombre de protocoles differents
+5. `syn_ratio` - proportion de paquets SYN
+6. `packet_rate` - frequence d'emission
+7. `avg_packet_size` - taille moyenne des paquets
+8. `connection_pattern` - motif de connexion
+
+**Generation des donnees d'entrainement** :
+-Generation automatique de donnees synthetiques representant :
+  - Trafic normal : distributions statistiques realistes
+  - Trafic anormal : valeurs extremes, patterns suspects
+- Sauvegarde du modele entraine via **pickle** pour reuse
+
+**Inference** :
+- Score d'anomalie entre 0 et 1
+- Seuil configurable (defaut 0.6) pour classifier comme suspect
+
+#### RiskScorer (ai_engine/risk_scorer.py)
+
+**Calcul du score de risque composite** :
+
+```
+RiskScore = 50% * AnomalyScore + 30% * BehaviorScore + 20% * VulnerabilityScore
+```
+
+- **AnomalyScore** (50%) : sortie du modele Isolation Forest
+- **BehaviorScore** (30%) : evaluation du comportement reseau
+  - Frequence de connexion anormale
+  - Pattern de ports inhabituel
+  - Volume de trafic excessif
+- **VulnerabilityScore** (20%) : evaluation des vulnerabilites connues
+  - Ports ouverts identifies par le scanner
+  - Services vulnerabilites detectes
+
+**Classification des menaces** :
+
+| Type | Description | Score minimum |
+|------|-------------|---------------|
+| port_scan | Scan de ports | 0.4 |
+| dos | Deni de service | 0.7 |
+| brute_force | Force brute | 0.6 |
+| exfiltration | Exfiltration de donnees | 0.75 |
+| anomaly | Anomalie generale | 0.5 |
+
+### 3.3 Reponse automatique (IPS)
+
+#### IPBlocker (ips/blocker.py)
+
+**Blocage via iptables** :
+- Insertion de regles iptables pour rejeter tout trafic de l'IP cible
+- Verification des permissions (necessite sudo/root)
+- Syntaxe : `iptables -A INPUT -s <IP> -j DROP`
+
+**Politique de blocage** :
+- Duree initiale : 1 heure
+- Augmentation exponentielle en cas de recidive : 2h, 4h, 8h, 24h, 168h (1 semaine)
+- Reinitialisation du compteur apres 7 jours sans nouvel incident
+- Deblocage automatique a l'expiration via thread de monitoring
+
+#### AlertManager (ips/alert_manager.py)
+
+**Diffusion WebSocket** :
+- Connexions persistantes avec les clients dashboard
+- Envoi immediat des alertes en format JSON
+- Format : `{type, severity, ip, threat, timestamp, details}`
+
+**Notifications email** :
+- Envoi d'emails HTML pour les incidents critiques (score >= 0.8)
+- Configuration SMTP dans settings.py
+- Template HTML avec mise en forme et details de l'incident
+
+#### IncidentLogger (ips/incident_logger.py)
+
+**Base de donnees** :
+- 5 tables principales :
+  - `incidents` - logs des detection d'anomalies
+  - `alerts` - alertes emises
+  - `blocked_ips` - IPs bloquees avec dates
+  - `false_positives` - FP认同 et corrctions
+  - `whitelist` - IPs autorisees
+
+**Operations CRUD** :
+- Creation d'incidents lors des detections
+- Mise a jour du statut des IPs bloquees
+- Marquage/demarquage des faux positifs
+- Ajout/retrait de la whitelist
+
+#### Gestion des faux positifs
+
+**Detection de FP** :
+- Si l'IP est debloquee manuellement, elle est marquee comme FP
+- Score reduit progressivement (0.8 -> 0.6 -> 0.4 -> 0.2)
+- Si le score descend sous 0.3, le FP est efface
+
+**Actions disponibles** :
+- Marquer comme FP via dashboard
+- Deblocage automatique apres 3 detections de FP consecutives
+- Ajout automatique a la whitelist optionnel
+
+#### Liste blanche (whitelist)
+
+**Caracteristiques** :
+- IPs exemptes de blocage automatique
+- Reason (raison) obligatoire pour chaque entree
+- Source : manual, chatbot, false_positive
+- Expiration configurable (heures) ou permanente
+- Verification systematique avant blocage
+
+### 3.4 Dashboard
+
+#### Interface web (FastAPI)
+
+**Endpoints REST** :
+
+| Endpoint | Methode | Description |
+|----------|---------|-------------|
+| /api/stats | GET | Statistiques globales |
+| /api/incidents | GET | Liste des incidents |
+| /api/incidents/{id} | GET | Detail d'un incident |
+| /api/blocked | GET | IPs bloquees |
+| /api/false-positives | GET/POST/DELETE | Gestion FP |
+| /api/whitelist | GET/POST/DELETE | Gestion whitelist |
+| /api/traffic | GET | Trafic agrégé |
+| /api/geo-threats | GET | Threats par pays |
+| /api/chatbot/status | GET | Status chatbot |
+| /api/chatbot/chat | POST | Dialogue chatbot |
+| /api/export/incidents | GET | Export JSON/CSV |
+| /ws | WebSocket | Alertes temps reel |
+
+**Authentification** :
+- HTTP Basic Auth
+- Identifiants dans config/settings.py (admin/admin par defaut)
+- Verification via fastapi.security.HTTPBasic
+
+#### Interface utilisateur (HTML/CSS/JS)
+
+**8 onglets** :
+
+1. **Vue d'ensemble** - KPI, graphiques d'evolution, statistiques temps reel
+2. **Incidents** - Tableau triable avec details, pagination
+3. **Bloques** - IPs bloquees avec duree restante, bouton de deblocage
+4. **Faux positifs** - Gestion des FP认同s, correction automatique
+5. **Whitelist** - Liste des IPs autorisees, ajout/suppression
+6. **Trafic** - Graphique temps reel du trafic reseau
+7. **Carte 3D** - Globe terrestre avec arcs de flux et points d'IP
+8. **Logs** - Journal des evenements systeme
+
+**Visualisations** :
+- **Chart.js** : graphiques lineaires, barres, camembert
+- **Globe.gl** : globe 3D interactif avec :
+  - Arcs de flux entre pays
+  - Points pour les IPs menacees
+  - Pulsation pour les incidents critiques
+  - Tooltip avec continent/pays au survol
+
+**Technologies frontend** :
+- Vanilla JavaScript (pas de framework)
+- CSS avec variables pour le themage
+- Design responsive (desktop-first)
+
+#### Chatbot IA
+
+**SecurityChatbot (chatbot/security_chatbot.py)** :
+
+- Integration avec **Groq** (modele llama-3.3-70b-versatile)
+- Capacites :
+  - Repondre aux questions sur les incidents
+  - Expliquer pourquoi une IP a ete bloquee
+  - Executer des actions : bloquer, debloquer, ajouter a la whitelist
+  - Donner des statistiques et rapports
+
+**Patterns reconnus** :
+- "bloquer 1.2.3.4" → action block
+- "debloquer 1.2.3.4" → action unblock
+- "whitelist 1.2.3.4" → action whitelist
+
+**Limitation actuelle** :
+- Necessite GROQ_API_KEY dans les variables d'environnement
+- Si desactive, retourne un message d'erreur
+
+### 3.5 Infrastructure
+
+#### Base de donnees
+
+**SQLAlchemy ORM** :
+- Support de PostgreSQL et SQLite
+- Models declares dans database/models.py
+- Migrations : create_all() sans Alembic
+
+**Schema BDD** :
+
+```sql
+-- Incidents
+incidents: id, ip_address, timestamp, risk_score, threat_type, 
+           risk_level, action_taken, details
+
+-- Alerts  
+alerts: id, incident_id, severity, created_at, sent, type
+
+-- Blocked IPs
+blocked_ips: id, ip_address, blocked_at, expires_at, 
+             blocked_count, reason, is_active
+
+-- False Positives
+false_positives: id, incident_id, ip_address, category, reason,
+                 marked_by, marked_at, auto_unblocked, 
+                 added_to_whitelist
+
+-- Whitelist
+whitelist: id, ip_address, reason, added_by, added_at,
+           expires_at, is_active, source, fp_id
+```
+
+#### Deploiement
+
+**Docker Compose** :
+- Service PostgreSQL 15 avec healthcheck
+- Service application Python
+
+**Script d'installation** :
+- support Debian, RedHat, Arch Linux
+- Installation des dependances systeme
+- Configuration du service systemd
+
+**Gestion des logs** :
+- Rotation automatique (10 MB max, 5 backups)
+- Niveaux : DEBUG, INFO, WARNING, ERROR
+- Sortie console et fichier
+
+---
+
+## 4. Mode d'emploi
+
+### 4.1 Demarrage
+
+```bash
+# Lancer le systeme
+python3 main.py
+
+# Ou via le script
+./hackathon.sh start
+```
+
+### 4.2 Acces dashboard
+
+- URL : http://localhost:8000
+- Identifiants : admin / admin
+
+### 4.3 Commandes chatbot
+
+```
+"combien d'incidents aujourd'hui ?" → statistiques
+"pourquoi 1.2.3.4 est bloquee ?" → explication
+"bloquer 192.168.1.100" → bloquer IP
+"debloquer 192.168.1.100" → debloquer IP
+"ajouter 8.8.8.8 a la whitelist" → autoriser IP
+```
+
+---
+
+## 5. Points a ameliorer
+
+### Securite critique
+1. Credentiels en dur — .env tracke dans git avec DASHBOARD_PASSWORD=admin, SECRET_KEY=change-this. Rotation urgente necessaire.
+2. Pas de HTTPS — tout le trafic dashboard circule en clair. Ajouter nginx + Let's Encrypt.
+3. Pas de rate limiting — les endpoints API n'ont aucune limite de requetes.
+4. Authentification basique uniquement — python-jose et passlib sont dans requirements mais jamais utilises. Prevoir JWT avec tokens expires.
+5. XSS potentiel — renderIncidentsTable injecte JSON dans onclick avec replace(/"/g, '&quot;'), fragile et risque XSS.
+
+### Code
+6. IDSEngine (core/engine.py) est du code mort — 180 lignes jamais utilisees. main.py utilise SecurityAgent. A supprimer.
+7. Fonction _sanitize() dupliquee — identique dans alert_manager.py et incident_logger.py. A extraire dans un module partage.
+8. python-dotenv absent de requirements.txt — importe dans settings.py mais pas declare.
+9. pyshark, python-jose, passlib declares mais jamais importes — dependances inutiles.
+10. Pas de validation d'entree — /api/whitelist accepte n'importe quelle chaine comme IP.
+
+### Performance
+11. Geo-threats sequentiel — /api/geo-threats appelle lookup() IP par IP. Avec 500 incidents et rate limiting 1 req/s, ca prend des minutes.
+12. TrafficAggregator convertit sets en listes a chaque appel get_aggregated() — couteux.
+13. Refresh dashboard toutes les 5s pour 5 endpoints simultanes — charge API importante.
+
+### BDD
+14. Pas de migrations — create_all() uniquement. Pas d'Alembic.
+15. Pas de fallback BDD — si PostgreSQL est indisponible, crash silencieux malgre le try/except.
+16. BlockedIP.is_active utilise Integer au lieu de Boolean — incoherent avec les autres modeles.
+
+---
+
+## 6. Fonctionnalites non implementees
+
+| Fonctionnalite | Impact |
+|----------------|--------|
+| Tests unitaires / integration | Aucun test automatise. Seul generate_test_data.py existe. Risque de regressions. |
+| Support IPv6 | Tout le code suppose IPv4. Les regex, iptables et la logique IP ne gerent pas IPv6. |
+| Reentrainement du modele IA | Pas de mecanisme pour re-entrainer avec des donnees reelles apres deploiement. |
+| Controle d'acces par roles | Un seul utilisateur admin. Pas de roles (analyste, operateur, admin). |
+| Page de configuration web | Tout se parametre via .env. Pas d'interface pour modifier la politique de securite. |
+| Journal d'audit | Pas de trace de qui a fait quoi (blocage, marquage FP, ajout whitelist). |
+| Healthcheck Docker pour l'app | Seul Postgres a un healthcheck. L'app pourrait demarrer avant que la BDD ne soit prete. |
+| Deconnection WebSocket cote serveur | Pas de logique de reconnexion si le client se deconnecte. |
+| Support proxy / load balancer | Aucune configuration pour derriere nginx/HAProxy. |
+| Alertes Slack/Discord/Webhook | Seul email et WebSocket. Pas d'integration externe. |
+| Correlation multi-sources | Les logs, le scan de ports et le trafic ne sont pas correles entre eux. |
+| Dashboard responsive mobile | Le CSS n'est pas optimise pour les petits ecrans. |
+
+---
+
+## 7. Recommandations prioritaires
+
+Court terme (securite) :
+1. Supprimer .env du tracking git, rotation des secrets
+2. Ajouter nginx reverse proxy avec HTTPS
+3. Implementer JWT avec python-jose au lieu de HTTP Basic
+4. Valider les entrees API (IP, whitelist)
+
+Moyen terme (qualite) :
+5. Ecrire des tests unitaires (pytest) pour les composants critiques
+6. Supprimer core/engine.py (code mort)
+7. Ajouter python-dotenv a requirements.txt, retirer pyshark
+8. Implementer les migrations BDD avec Alembic
+9. Support IPv6
+
+Long terme (fonctionnalites) :
+10. Re-entrainement du modele avec donnees reelles
+11. Controle d'acces par roles
+12. Correlation multi-sources (logs + trafic + scan)
+13. Integration alertes externes (Slack, Discord, webhooks)
