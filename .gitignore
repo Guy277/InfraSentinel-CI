@@ -8,3 +8,5 @@ venv/
 logs/
 data/
 scratch/
+*.log
+*.log
