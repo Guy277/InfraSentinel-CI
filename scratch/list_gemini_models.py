@@ -1,7 +1,11 @@
 import json
+import os
 from urllib.request import Request, urlopen
+from dotenv import load_dotenv
 
-GEMINI_API_KEY="AIzaSyBYYp-8e3fPHjBDql5yfSpt2R0uEoMIyfQ"
+load_dotenv()
+
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 url = f"https://generativelanguage.googleapis.com/v1beta/models?key={GEMINI_API_KEY}"
 
 req = Request(url, headers={"User-Agent": "InfraSentinel-CI/1.0"}, method="GET")

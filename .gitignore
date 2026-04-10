@@ -7,3 +7,4 @@ venv/
 *.pkl
 logs/
 data/
+scratch/

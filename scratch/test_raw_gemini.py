@@ -1,8 +1,12 @@
 import json
+import os
 from urllib.request import Request, urlopen
 from urllib.error import HTTPError
+from dotenv import load_dotenv
 
-GEMINI_API_KEY="AIzaSyBYYp-8e3fPHjBDql5yfSpt2R0uEoMIyfQ"
+load_dotenv()
+
+GEMINI_API_KEY = os.getenv("GEMINI_API_KEY")
 model = "gemini-1.5-flash"
 url = f"https://generativelanguage.googleapis.com/v1beta/models/{model}:generateContent?key={GEMINI_API_KEY}"
 
